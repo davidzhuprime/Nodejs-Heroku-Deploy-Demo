@@ -23,20 +23,4 @@ function formatTime(time) {
     return time;
 }
 
-function setAlarmTime(value) {
-    alarmTime = value;
-}
-
-function setAlarm() {
-    if(alarmTime) {
-        const current = new Date();
-        const timeToAlarm = new Date(alarmTime);
-
-        if (timeToAlarm > current) {
-            const timeout = timeToAlarm.getTime() - current.getTime();
-            alarmTimeout = setTimeout(() => audio.play(), timeout);
-            alert('Alarm set');
-        }
-    }
-}
 setInterval(updateTime, 1000);
